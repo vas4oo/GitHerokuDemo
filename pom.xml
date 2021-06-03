@@ -47,7 +47,7 @@
 						<configuration>
 							<appName>pu-heroku-git-demo</appName>
 							<processTypes>
-								<web>java $JAVA_OPTS -cp target/classes:target/dependency/* pu.soft.arch.GitHerokuDemo</web>
+								<web>java $JAVA_OPTS -Dserver.port=$PORT -jar target/*.jar -Dspring.profiles.active=prod</web>
 							</processTypes>
 						</configuration>
 					</plugin>
