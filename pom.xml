@@ -47,7 +47,7 @@
 						<configuration>
 							<appName>pu-heroku-git-demo</appName>
 							<processTypes>
-								<web>java -Xmx1g -Xss512k -XX:CICompilerCount=2 -Dfile.encoding=UTF-8 -jar -Dserver.port=$PORT ${full-artifact-name}</web>
+								<web>java $JAVA_OPTS -cp target/classes:target/dependency/* pu.soft.arch.GitHerokuDemo</web>
 							</processTypes>
 						</configuration>
 					</plugin>
