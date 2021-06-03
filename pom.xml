@@ -13,6 +13,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>GitHerokuDemo</name>
 	<description>Demo project for Spring Boot</description>
+	<properties>
+		<full-artifact-name>target/${project.artifactId}-${project.version}.jar</full-artifact-name>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -47,7 +50,7 @@
 						<configuration>
 							<appName>pu-heroku-git-demo</appName>
 							<processTypes>
-								<web>java $JAVA_OPTS -Dserver.port=$PORT -jar target/*.jar -Dspring.profiles.active=prod</web>
+								<web>java -Xmx1g -Xss512k -XX:CICompilerCount=2 -Dfile.encoding=UTF-8 -jar -Dserver.port=$PORT ${full-artifact-name}</web>
 							</processTypes>
 						</configuration>
 					</plugin>
