@@ -15,6 +15,6 @@ public class HelloController {
 		LocalDateTime currentDateTime = LocalDateTime.now();
 		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 		String formattedDateTime = currentDateTime.format(dateTimeFormatter);
-		return "Hello, the date and time is: "+ formattedDateTime;
+		return "Hello there, the date and time is: "+ formattedDateTime;
 	}
 }
